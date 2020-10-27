@@ -29,6 +29,10 @@ function App() {
     document.body.style.height = `${scrollContainer.current.getBoundingClientRect().height}px`
   }, [size.height]) // [] = empty dependency, [size.height] = window size hook imported above
 
+  useEffect(() => {
+    requestAnimationFrame(() => skewScrolling())
+  })
+
   const skewScrolling = () => {
     skewConfig.current = window.scrollY
     skewConfig.previous += (skewConfig.current - skewConfig.previous) * skewConfig.ease
