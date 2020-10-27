@@ -42,7 +42,7 @@ function App() {
     // skew mechanics variables
     const difference = skewConfig.current - skewConfig.rounded
     const acceleration = difference / size.width // emphasise skew effect on smaller devices
-    const skew = acceleration * 12;
+    const skew = +acceleration * 9;
 
     // skew
     scrollContainer.current.style.transform = `translate3d(0, -${skewConfig.rounded}px, 0) skewY(${skew}deg)` 
