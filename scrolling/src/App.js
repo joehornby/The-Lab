@@ -29,6 +29,24 @@ function App() {
     document.body.style.height = `${scrollContainer.current.getBoundingClientRect().height}px`
   }, [size.height]) // [] = empty dependency, [size.height] = window size hook imported above
 
+  const skewScrolling = () => {
+    skewConfig.current = window.scrollY
+    skewConfig.previous += (skewConfig.current - skewConfig.previous) * skewConfig.ease
+    skewConfig.rounded = Math.round(skewConfig.previous * 100) / 100
+
+    // skew mechanics variables
+    const difference = skewConfig.current - skewConfig.rounded
+    const acceleration = difference / size.width // emphasise skew effect on smaller devices
+    const skew = acceleration * 12;
+
+    // skew
+    scrollContainer.current.style.transform = `translate3d(0, -${skewConfig.rounded}px, 0) skewY(${skew}deg)` 
+
+    // ask browser to update animation before repaint
+    requestAnimationFrame(() => skewScrolling())
+
+  }
+
   return (
     <div ref={app} className="App">
       <div ref={scrollContainer} className="scroll">
