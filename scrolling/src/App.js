@@ -60,9 +60,14 @@ function App() {
             <div key={index} className="img-container">
               <img src={image} alt={`Process ${index} &mdash; Joseph Hornby in 'Languitecture', &copy; 2016`} />
             </div>
-            <h2>
-              Lorem Ipsum
-            </h2>
+            <div className="caption">
+              <h2>{captions[index].title}</h2>
+              <h3>
+                {captions[index].artist}
+                <span>{captions[index].exhibition}, {captions[index].date}</span>
+              </h3>
+            </div>
+
           </>
         ))}
       </div>
