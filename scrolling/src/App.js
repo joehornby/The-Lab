@@ -14,6 +14,14 @@ function App() {
   const app = useRef()
   const scrollContainer = useRef()
 
+  // Skew config
+  const skewConfig = {
+    ease: 0.1,
+    current: 0,
+    previous: 0,
+    rounded: 0
+  }
+
   // Using empty dependency [], useEffect will only run once component has mounted. 
   // With a dependency, it will also run when the dependency changes - in this case, when the the window size changes.
   // TODO: add debounce to avoid excessive rendering on window size
