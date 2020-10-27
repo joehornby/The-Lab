@@ -18,13 +18,19 @@ h2 {
 }
 
 .App {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
   .scroll {
     padding: 2vh 0;
     pointer-events: none;
   }
   .img-container {
-    width: 700px;
-    height: 420px;
+    width: 66vw;
+    height: 66vw;
     overflow: hidden;
     position: relative;
     margin: 400px auto;
@@ -38,7 +44,8 @@ h2 {
       margin-bottom: 200px;
     }
     @media (max-width: 480px) {
-      width: 95%;
+      width: 95vw;
+      height: 95vw;
     }
     img {
       width: 100%;
