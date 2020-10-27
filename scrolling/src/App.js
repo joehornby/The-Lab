@@ -5,6 +5,7 @@ import "./App.scss"
 import useWindowSize from './hooks/useWindowSize'
 
 import images from "./images/images"
+import captions from "./images/captions"
 
 function App() {
   // Hook
